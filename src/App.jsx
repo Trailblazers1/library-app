@@ -1,16 +1,27 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
+import BookList from "./pages/bookList";
+import AddBook from "./pages/addBook";
+import BookDetails from "./pages/bookDetails";
 
 function App() {
-  return (
-    <div>
-      <Nav />
-      <Hero />
-      <Footer />
-    </div>
-  );
-};
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <BookList />,
+    },
+
+    {
+      path: "/add-new",
+      element: <AddBook />,
+    },
+
+    {
+      path: "/books/:id",
+      element: <BookDetails />,
+    },
+  ]);
+  return <RouterProvider router={router} />;
+}
 
 export default App;
