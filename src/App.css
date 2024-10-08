@@ -1,0 +1,19 @@
+/* *{
+    padding: 0;
+    margin: 0;
+} */
+
+ .overlay{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+} 
+
+.overlay img{
+    width: 38%;
+    height: 30%;
+    
+} 
+
