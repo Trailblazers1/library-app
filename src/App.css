@@ -3,20 +3,33 @@
     margin: 0;
 } */
 
- .overlay{
+.overlay {
     margin-left: 10px;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: end;
 
-} 
+}
 
-.overlay img{
+.overlay img {
     width: 38%;
     height: 30%;
-    
-} 
+
+}
+
+.sec {
+
+    height: 100vh;
+    width: 100vw;
+    background-image: url('./assets/images/abt.jpg');
+    background-size: cover;
 
 
+}
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
