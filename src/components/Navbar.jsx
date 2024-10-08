@@ -7,13 +7,14 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faMessage } from "@fortawesome/free-regular-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
       <nav className="flex justify-around ml-[10px] ">
         <div className="flex items-center gap-5 font-bold text-[50px]">
-          <img src={pic} alt="" className="" />
+          <img src={pic} alt=""/>
           <h1>Bookle</h1>
         </div>
         <div className=" ml-[200px]">
@@ -46,7 +47,7 @@ const Navbar = () => {
               <option value="">Collection</option>
               <option value="">View All Books</option>
             </select>
-            <a href="">About Us</a>
+            <Link to="/aboutUs">About Us</Link>
             <a href="">Contact</a>
             <div className="flex justify-evenly w-[15vw]">
               <FontAwesomeIcon icon={faHeart} />
