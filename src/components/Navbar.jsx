@@ -6,16 +6,16 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 const Navbar = () => {
   return (
     <div>
-      <nav className="flex justify-around ml-[80px] ">
-        <div className="flex items-center gap-5 font-bold text-[20px]">
+      <nav className="flex justify-around ml-[10px] ">
+        <div className="flex items-center gap-5 font-bold text-[50px]">
           <img src={pic} alt="" className="" />
           <h1>Bookle</h1>
         </div>
-        <div className=" ml-[280px]">
+        <div className=" ml-[200px]">
           {/* <div className="bg-red-500 w-[100%]">  */}
           <div className="w-[40%]">
             {/* <ul className="flex justify-evenly w-[99vw] bg-[#036280] h-[10vh] items-center text-white"> */}
-            <ul className="flex justify-evenly w-[70vw] bg-[#036280] h-[10vh] items-center text-white">
+            <ul className="flex justify-evenly w-[70vw] bg-[#f16c2f] h-[10vh] items-center text-white">
               <li>+233240095799 </li>
               <li>info@bookle.com </li>
               <li>Sunday - Fri: 9 aM - 6 pm</li>
