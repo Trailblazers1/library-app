@@ -1,4 +1,5 @@
  import pic from "./head.png"
+  // import picc from "../"
 //  import picc from "./dot.png"
 const Hero = () => {
   return (
@@ -13,17 +14,20 @@ const Hero = () => {
                 placeholder="Search for a book" 
                 className="pl-10 pr-4 py-2 w-full  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#E56F47]" />
         </div>
-          {/* <img src={picc} alt="" /> */}
+          {/* { <img src={picc} alt="" /> } */}
           <img src={pic} alt="" />
 
         </div> 
 
       </div>
 
-      <section className="sec">
-      
+        
 
-      </section>
+      {/* <section >
+      <div className="w-[100vw] h-[60vh]">
+       <div className="w-[300px] h-[300px]"> <img src={picc} alt="" /></div>
+      </div>
+      </section> */}
     </div>
   );
 };
