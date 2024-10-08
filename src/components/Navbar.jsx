@@ -7,12 +7,12 @@ const Navbar = () => {
   return (
     <div>
       <nav className="flex justify-around ml-[80px] ">
-        <div className="flex items-center gap-5 bg-[#012E4A]">
-          <img src={pic} alt=""  className=""/>
+        <div className="flex items-center gap-5 font-bold text-[20px]">
+          <img src={pic} alt="" className="" />
           <h1>Bookle</h1>
         </div>
-        <div className=" ml-[280px]"> 
-        {/* <div className="bg-red-500 w-[100%]">  */}
+        <div className=" ml-[280px]">
+          {/* <div className="bg-red-500 w-[100%]">  */}
           <div className="w-[40%]">
             {/* <ul className="flex justify-evenly w-[99vw] bg-[#036280] h-[10vh] items-center text-white"> */}
             <ul className="flex justify-evenly w-[70vw] bg-[#036280] h-[10vh] items-center text-white">
@@ -24,7 +24,7 @@ const Navbar = () => {
             </ul>
           </div>
           {/* <div className="flex justify-evenly w-[99vw] h-[8vw] items-center bg-slate-400"> */}
-          <div className="flex justify-evenly w-[70vw] h-[8vw] items-center bg-slate-400">
+          <div className="flex justify-evenly w-[70vw] h-[8vw] items-center">
             <a href="">Home</a>
             <select name="" id="">
               <option value="">Books</option>
