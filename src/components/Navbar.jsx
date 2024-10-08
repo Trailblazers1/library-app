@@ -2,6 +2,11 @@ import pic from "../assets/images/log.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { faMessage } from "@fortawesome/free-regular-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 const Navbar = () => {
   return (
@@ -15,11 +20,16 @@ const Navbar = () => {
           {/* <div className="bg-red-500 w-[100%]">  */}
           <div className="w-[40%]">
             {/* <ul className="flex justify-evenly w-[99vw] bg-[#036280] h-[10vh] items-center text-white"> */}
-            <ul className="flex justify-evenly w-[70vw] bg-[#f16c2f] h-[10vh] items-center text-white">
+            <ul className="flex justify-evenly w-[70vw] bg-[#E56F47] h-[10vh] items-center text-white">
+              <FontAwesomeIcon icon={faPhone} />
               <li>+233240095799 </li>
+              <FontAwesomeIcon icon={faEnvelope} />
               <li>info@bookle.com </li>
+              <FontAwesomeIcon icon={faClock} />
               <li>Sunday - Fri: 9 aM - 6 pm</li>
+              <FontAwesomeIcon icon={faMessage} />
               <li>Live chat</li>
+              <FontAwesomeIcon icon={faUser} />
               <li>Login</li>
             </ul>
           </div>
