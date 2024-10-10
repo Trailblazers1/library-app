@@ -1,7 +1,5 @@
 import pic from "../assets/images/log.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
@@ -14,14 +12,12 @@ const Navbar = () => {
     <div>
       <nav className="flex justify-around ml-[10px] ">
         <div className="flex items-center gap-5 font-bold text-[50px]">
-          <img src={pic} alt=""/>
-          <h1>Bookle</h1>
+          <img src={pic} alt="" />
+          <Link to="/">Bookle</Link>
         </div>
         <div className=" ml-[200px]">
-          {/* <div className="bg-red-500 w-[100%]">  */}
-          <div className="w-[40%]">
-            {/* <ul className="flex justify-evenly w-[99vw] bg-[#036280] h-[10vh] items-center text-white"> */}
-            <ul className="flex justify-evenly w-[70vw] bg-[#E56F47] h-[10vh] items-center text-white">
+          <div className="w-[40%] bg-white">
+            <ul className="flex justify-evenly w-[70vw] bg-[#036CDB] h-[10vh] items-center text-white">
               <FontAwesomeIcon icon={faPhone} />
               <li>+233240095799 </li>
               <FontAwesomeIcon icon={faEnvelope} />
@@ -31,12 +27,11 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faMessage} />
               <li>Live chat</li>
               <FontAwesomeIcon icon={faUser} />
-              <li>Login</li>
+              <Link to="/authForm">Sign Up</Link>
             </ul>
           </div>
-          {/* <div className="flex justify-evenly w-[99vw] h-[8vw] items-center bg-slate-400"> */}
-          <div className="flex justify-evenly w-[70vw] h-[8vw] items-center">
-            <a href="">Home</a>
+          <div className="flex justify-evenly w-[70vw] h-[8vw] items-center ">
+            <Link to="/">Home</Link>
             <select name="" id="">
               <option value="">Books</option>
               <option value="">Journals</option>
@@ -47,11 +42,10 @@ const Navbar = () => {
               <option value="">Collection</option>
               <option value="">View All Books</option>
             </select>
-            <Link to="/about">About Us</Link>
-            <a href="">Contact</a>
+            <Link to="/aboutUs">About Us</Link>
+            <Link to="/contactUs"> Contact</Link>
             <div className="flex justify-evenly w-[15vw]">
-              <FontAwesomeIcon icon={faHeart} />
-              <FontAwesomeIcon icon={faCartShopping} />
+              <Link to="/wishList">Wishlist</Link>
             </div>
           </div>
         </div>
