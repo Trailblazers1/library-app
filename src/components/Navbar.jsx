@@ -47,7 +47,7 @@ const Navbar = () => {
               <option value="">Collection</option>
               <option value="">View All Books</option>
             </select>
-            <Link to="/aboutUs">About Us</Link>
+            <Link to="/about">About Us</Link>
             <a href="">Contact</a>
             <div className="flex justify-evenly w-[15vw]">
               <FontAwesomeIcon icon={faHeart} />
