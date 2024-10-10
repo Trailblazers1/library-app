@@ -13,12 +13,10 @@ const Navbar = () => {
       <nav className="flex justify-around ml-[10px] ">
         <div className="flex items-center gap-5 font-bold text-[50px]">
           <img src={pic} alt="" />
-          <h1>Bookle</h1>
+          <Link to="/">Bookle</Link>
         </div>
         <div className=" ml-[200px]">
-          {/* <div className="bg-red-500 w-[100%]">  */}
           <div className="w-[40%] bg-white">
-            {/* <ul className="flex justify-evenly w-[99vw] bg-[#036280] h-[10vh] items-center text-white"> */}
             <ul className="flex justify-evenly w-[70vw] bg-[#036CDB] h-[10vh] items-center text-white">
               <FontAwesomeIcon icon={faPhone} />
               <li>+233240095799 </li>
@@ -29,10 +27,10 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faMessage} />
               <li>Live chat</li>
               <FontAwesomeIcon icon={faUser} />
-              <Link to="/authForm">Login</Link>
+              <Link to="/authForm">Sign Up</Link>
             </ul>
           </div>
-          <div className="flex justify-evenly w-[70vw] h-[8vw] items-center">
+          <div className="flex justify-evenly w-[70vw] h-[8vw] items-center ">
             <Link to="/">Home</Link>
             <select name="" id="">
               <option value="">Books</option>
@@ -45,7 +43,7 @@ const Navbar = () => {
               <option value="">View All Books</option>
             </select>
             <Link to="/aboutUs">About Us</Link>
-            <a href="">Contact</a>
+            <Link to="/contactUs"> Contact</Link>
             <div className="flex justify-evenly w-[15vw]">
               <Link to="/wishList">Wishlist</Link>
             </div>
