@@ -21,19 +21,19 @@ const Footer = () => {
           </div>
 
           <div className="poppins-light-italic leading-8">
-            <span><BsEnvelopeAtFill /></span>
+            <span className="flex justify-center"><BsEnvelopeAtFill /></span>
             <h3>Make a Quote</h3>
             <h2>info@bookle.com</h2>
           </div>
 
           <div className="poppins-light-italic">
-            <span><IoMdTimer /></span>
+            <span className="flex justify-center"><IoMdTimer /></span>
             <h3>Opening Hour</h3>
             <h2>Sunday - Fri: 9 aM - 6 pM</h2>
           </div>
 
           <div className="poppins-light-italic">
-            <span><IoLocationOutline /></span>
+            <span className="flex ml-5"><IoLocationOutline /></span>
             <h3>Location</h3>
             <h2>4517 Esther Ocloo ave</h2>
           </div>
