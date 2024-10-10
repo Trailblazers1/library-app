@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import BookList from "./pages/bookList";
+ import BookList from "./pages/bookList";
 import AddBook from "./pages/addBook";
 import BookDetails from "./pages/bookDetails";
 import About from "./pages/about";
@@ -9,6 +9,8 @@ import WishList from "./pages/wishList";
 import ContactUs from "./pages/contactUs";
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/i18n'
+import EditBook from "./pages/editBook";
+import List from "./pages/getBooks";
 
 
 
@@ -16,7 +18,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <BookList />,
+       element: <BookList />,
     },
 
     {
@@ -55,6 +57,18 @@ function App() {
         <BookList />
       </div>
     </I18nextProvider>
+      element: <About/>
+    },
+
+    {
+      path: "/editbook",
+      element: <EditBook/>
+    },
+
+    {
+      path: "/getbooks",
+      element: <List/>
+    }
   ]);
   return <RouterProvider router={router} />;
 }
