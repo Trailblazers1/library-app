@@ -6,8 +6,20 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faMessage } from "@fortawesome/free-regular-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
+import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer); // Cleanup interval on unmount
+  }, []);
+
   return (
     <div>
       <nav className="flex justify-around ml-[10px] ">
@@ -15,7 +27,7 @@ const Navbar = () => {
           <img src={pic} alt="" />
           <Link to="/">Bookle</Link>
         </div>
-        <div className=" ml-[200px]">
+        <div className="ml-[200px]">
           <div className="w-[40%] bg-white">
             <ul className="flex justify-evenly w-[70vw] bg-[#036CDB] h-[10vh] items-center text-white">
               <FontAwesomeIcon icon={faPhone} />
@@ -23,26 +35,41 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faEnvelope} />
               <li>info@bookle.com </li>
               <FontAwesomeIcon icon={faClock} />
-              <li>Sunday - Fri: 9 aM - 6 pm</li>
+              <li>
+                {currentTime.toLocaleDateString()} -{" "}
+                {currentTime.toLocaleTimeString()}
+              </li>
               <FontAwesomeIcon icon={faMessage} />
               <li>Live chat</li>
               <FontAwesomeIcon icon={faUser} />
               <Link to="/authForm">Sign Up</Link>
             </ul>
           </div>
-          <div className="flex justify-evenly w-[70vw] h-[8vw] items-center ">
+          <div className="flex justify-evenly w-[70vw] h-[8vw] items-center sticky top-0 bg-white z-10">
             <Link to="/">Home</Link>
-            <select name="" id="">
-              <option value="">Books</option>
-              <option value="">Journals</option>
-              <option value="">Non-fiction</option>
-              <option value="">Fiction</option>
-            </select>
-            <select name="" id="">
-              <option value="">Collection</option>
-              <option value="">View All Books</option>
-            </select>
-            <Link to="/aboutUs">About Us</Link>
+            <div className="dropdown">
+              <div className="dropdown-button flex gap-5 align-middle items-center bg-transparent border-none">
+                <span>Books</span> <IoIosArrowDown />
+              </div>
+              <div className="dropdown-content">
+                <Link to="/getbooks">Books</Link>
+                <Link to="/journals">Journals</Link>
+                <Link to="/nonFiction">Non-fiction</Link>
+                <Link to="/fiction">Fiction</Link>
+              </div>
+            </div>
+            <div className="dropdown">
+              <div className="dropdown-button flex gap-5 align-middle items-center bg-transparent border-none">
+                <span>Collection</span> <IoIosArrowDown />
+              </div>
+              <div className="dropdown-content">
+                <Link to="/getbooks">Collection</Link>
+                <Link to="/viewAllBooks">View All Books</Link>
+                <Link to="/viewAllBooks">Book List</Link>
+              </div>
+            </div>
+
+            <Link to="/about">About Us</Link>
             <Link to="/contactUs"> Contact</Link>
             <div className="flex justify-evenly w-[15vw]">
               <Link to="/wishList">Wishlist</Link>

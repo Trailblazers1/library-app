@@ -15,25 +15,33 @@ const Footer = () => {
       <div className="bg-[#012E4A] text-white leading-8">
         <div className="flex flex-row justify-evenly pt-10 font-bold text-[20px] font-[roboto]">
           <div className="poppins-light-italic">
-            <span className="flex justify-center"><IoCall /></span>
+            <span className="flex ml-8">
+              <IoCall />
+            </span>
             <h3>Call Us 24/7</h3>
             <h2>+2332090945586</h2>
           </div>
 
           <div className="poppins-light-italic leading-8">
-            <span className="flex justify-center"><BsEnvelopeAtFill /></span>
+            <span className="flex ml-8">
+              <BsEnvelopeAtFill />
+            </span>
             <h3>Make a Quote</h3>
             <h2>info@bookle.com</h2>
           </div>
 
           <div className="poppins-light-italic">
-            <span className="flex justify-center"><IoMdTimer /></span>
+            <span className="flex ml-8">
+              <IoMdTimer />
+            </span>
             <h3>Opening Hour</h3>
             <h2>Sunday - Fri: 9 aM - 6 pM</h2>
           </div>
 
           <div className="poppins-light-italic">
-            <span className="flex ml-5"><IoLocationOutline /></span>
+            <span className="flex ml-5">
+              <IoLocationOutline />
+            </span>
             <h3>Location</h3>
             <h2>4517 Esther Ocloo ave</h2>
           </div>
@@ -144,11 +152,22 @@ const Footer = () => {
             <div>
               <hr className="flex-1 border-1 border-orange-300 w-[30%] ml-6 mb-8" />
             </div>
-            <p>
-              Sign up to searing weekly newsletter to get the latest updates
+            <p className="text-[#FFFCDC] mb-4">
+              Sign up to our weekly newsletter to get the latest updates
             </p>
-            <form className="mt-5">
-              <input type="text" placeholder="Enter Your Email" />
+            <form className="mt-5 flex flex-col">
+              <input
+                type="email"
+                placeholder="Enter Your Email"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400 mb-4 text-black" // Added text-black
+                required
+              />
+              <button
+                type="submit"
+                className="w-full px-4 py-2 bg-[#036CDB] text-white font-bold rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-50 transition duration-300"
+              >
+                Subscribe
+              </button>
             </form>
           </div>
         </div>
