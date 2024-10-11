@@ -52,7 +52,7 @@ function App() {
     },
 
     {
-      path: "/editbook",
+      path: "/editbook/:id",
       element: <EditBook />,
     },
 
@@ -63,23 +63,20 @@ function App() {
 
     {
       path: "/fiction",
-      element: <Fiction/>
+      element: <Fiction />,
     },
 
     {
       path: "/journals",
-      element: <Journals/>
+      element: <Journals />,
     },
 
     {
       path: "/nonFiction",
-      element: <NonFiction/>
+      element: <NonFiction />,
     },
 
-    {path: "/viewAllBooks",
-      element: <ViewAllBooks/>
-
-    }
+    { path: "/viewAllBooks", element: <ViewAllBooks /> },
   ]);
   return <RouterProvider router={router} />;
 }

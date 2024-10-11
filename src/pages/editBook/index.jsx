@@ -1,29 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { useParams } from "react-router-dom";
+import { BASE_URL } from "../../constants";
+import axios from "axios";
 
 const EditBook = ({ bookId }) => {
+  const { id } = useParams();
   const [bookDetails, setBookDetails] = useState({
-    author: '',
-    title: '',
-    year: '',
-    genre: '',
-    content: '',
-    cover: '',
-    summary: '',
+    author: "",
+    title: "",
+    year: "",
+    genre: "",
+    content: "",
+    cover: "",
+    summary: "",
   });
 
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   // Fetch the current book details when the component mounts
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await fetch(` BASE_URL/${bookId}`); // Replace with your API URL
+        const response = await fetch(`${BASE_URL}/books/${id}`); // Replace with your API URL
         const data = await response.json();
         setBookDetails(data);
       } catch (error) {
-        console.error('Error fetching book details:', error);
+        console.error("Error fetching book details:", error);
       }
     };
 
@@ -34,21 +38,18 @@ const EditBook = ({ bookId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(` BASE_URL/${bookId}`, {
-        method: 'PUT', // Use PUT for updating
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(bookDetails),
-      });
+      const response = await axios.patch(
+        `${BASE_URL}/books/${bookDetails._id}`,
+        bookDetails
+      );
       if (response.ok) {
-        setMessage('Book updated successfully!');
+        setMessage("Book updated successfully!");
       } else {
-        setMessage('Failed to update the book.');
+        setMessage("Failed to update the book.");
       }
     } catch (error) {
-      console.error('Error updating book:', error);
-      setMessage('An error occurred while updating the book.');
+      console.error("Error updating book:", error);
+      setMessage("An error occurred while updating the book.");
     }
   };
 
@@ -63,11 +64,13 @@ const EditBook = ({ bookId }) => {
 
   return (
     <div>
-       <Navbar /> 
+      <Navbar />
       <div className="flex justify-center w-full h-[15vh] items-center">
         <h1 className="font-extrabold text-2xl">EDIT BOOK DETAILS</h1>
       </div>
-      {message && <div className="text-green-500 text-center mb-4">{message}</div>}
+      {message && (
+        <div className="text-green-500 text-center mb-4">{message}</div>
+      )}
       <form
         className="mb-[10vh] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] container mx-auto p-4 border border-gray-300 rounded-lg"
         onSubmit={handleSubmit}
@@ -91,7 +94,7 @@ const EditBook = ({ bookId }) => {
           className="border p-3 mb-4 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
         />
         <input
-          type="text"
+          type="number"
           placeholder="Year"
           required
           name="year"
@@ -135,15 +138,16 @@ const EditBook = ({ bookId }) => {
           onChange={handleChange}
           className="border p-3 mb-4 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
         />
-        
+
         <button
+          onClick={handleSubmit}
           type="submit"
           className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-200"
         >
           Update
         </button>
       </form>
-       <Footer /> 
+      <Footer />
     </div>
   );
 };
