@@ -1,4 +1,5 @@
 import pic from "./head.png"
+import List from "../../getBooks";
 // import picc from "../"
 //  import picc from "./dot.png"
 
@@ -13,7 +14,7 @@ const Hero = () => {
               Get Your New Book With The Best Price</h1>
             <form>
               <input type="text" placeholder="search for a book by Tittle/Genre/Author" className="border p-2 mb-2 w-full" required/>
-                   <button type="submit">search</button>
+                   <button type="submit" className="border-2 border-[#036CDB] w-[100px] p-1 font-bold">search</button>
                   </form>
 
                 </div>
@@ -31,6 +32,7 @@ const Hero = () => {
        <div className="w-[300px] h-[300px]"> <img src={picc} alt="" /></div>
       </div>
       </section> */}
+      <List/>
         </div>
         );
 };

@@ -7,8 +7,6 @@ import About from "./pages/about";
 import AuthForm from "./pages/authForm";
 import WishList from "./pages/wishList";
 import ContactUs from "./pages/contactUs";
-import { I18nextProvider } from "react-i18next";
-import i18n from "./i18n/i18n";
 import EditBook from "./pages/editBook";
 import List from "./pages/getBooks";
 
