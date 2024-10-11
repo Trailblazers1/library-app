@@ -33,3 +33,46 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+/* Container for the custom dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* The "selected" option */
+  .dropdown-button {
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+
+  /* The dropdown options */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border: 1px solid #ccc;
+    z-index: 1;
+  }
+
+  /* Each dropdown option styling */
+  .dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Hover effect for dropdown options */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  /* Show dropdown when hovering over the container */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

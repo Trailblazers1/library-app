@@ -9,6 +9,10 @@ import WishList from "./pages/wishList";
 import ContactUs from "./pages/contactUs";
 import EditBook from "./pages/editBook";
 import List from "./pages/getBooks";
+import Fiction from "./pages/fiction";
+import Journals from "./pages/journals.jsx";
+import NonFiction from "./pages/nonFiction/index.jsx";
+import ViewAllBooks from "./pages/viewAllBooks/index.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -56,6 +60,26 @@ function App() {
       path: "/getbooks",
       element: <List />,
     },
+
+    {
+      path: "/fiction",
+      element: <Fiction/>
+    },
+
+    {
+      path: "/journals",
+      element: <Journals/>
+    },
+
+    {
+      path: "/nonFiction",
+      element: <NonFiction/>
+    },
+
+    {path: "/viewAllBooks",
+      element: <ViewAllBooks/>
+
+    }
   ]);
   return <RouterProvider router={router} />;
 }
