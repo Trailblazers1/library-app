@@ -65,7 +65,7 @@ const Navbar = () => {
               <div className="dropdown-content">
                 <Link to="/getbooks">Collection</Link>
                 <Link to="/viewAllBooks">View All Books</Link>
-                <Link to="/viewAllBooks">Book List</Link>
+                <Link to="/add-new">Add Book</Link>
               </div>
             </div>
 
