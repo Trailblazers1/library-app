@@ -1,6 +1,6 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -8,6 +8,7 @@ import axios from "axios";
 const BookDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
+<<<<<<< HEAD
   const bookId = params.id;
 
   // State for book details
@@ -23,17 +24,30 @@ const BookDetails = () => {
   });
 
   // Fetch book details
+=======
+  console.log(params);
+  const bookId = params.id;
+
+  //1. declare state to store the todos
+  const [bookDetail, setBookDetail] = useState([]);
+
+>>>>>>> f0e690fa3f571056b979211c45045171138dff21
   useEffect(() => {
     const fetchBook = async () => {
       const response = await axios.get(`${BASE_URL}/books/${bookId}`);
       setBookDetail(response.data);
+<<<<<<< HEAD
       setEditedBook(response.data); // Pre-fill the edit form with existing data
+=======
+      console.log(bookDetail);
+>>>>>>> f0e690fa3f571056b979211c45045171138dff21
     };
     fetchBook();
   }, [bookId]);
 
   // Delete book function
   const deleteBook = async () => {
+<<<<<<< HEAD
     try {
       await axios.delete(`${BASE_URL}/books/${bookId}`);
       setFeedbackMessage("Book deleted successfully!");
@@ -164,6 +178,41 @@ const BookDetails = () => {
         </div>
       </div>
 
+=======
+    const response = await axios.delete(`${BASE_URL}/books/${bookId}`);
+    navigate("/getbooks");
+  };
+
+  return (
+    <div>
+      <Navbar />
+      <div className="flex ml-[10vw]">
+        <div className="w-[20vw]">
+          <img src={bookDetail.cover} alt={bookDetail.title} />
+        </div>
+        <div className="w-[40vw] m-10">
+          <h1 className="font-bold">{bookDetail.title}</h1>
+          <h1>{bookDetail.summary}</h1>
+          <h1>{bookDetail.year}</h1>
+          <h1>{bookDetail.genre}</h1>
+          <h1>{bookDetail.content}</h1>
+
+          <button
+            onClick={deleteBook}
+            className="border-2 border-red-500 w-[100px] p-1 font-bold"
+          >
+            DELETE
+          </button>
+          <Link
+            to={`/editbook/${bookDetail._id}`}
+            className="border-2 border-[#036CDB] w-[100px] p-1 font-bold"
+          >
+            EDIT
+          </Link>
+        </div>
+      </div>
+
+>>>>>>> f0e690fa3f571056b979211c45045171138dff21
       <Footer />
     </div>
   );
