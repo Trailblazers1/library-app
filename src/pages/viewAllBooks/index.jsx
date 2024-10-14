@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
 import { BASE_URL } from "../../constants";
+import { Link } from "react-router-dom";
 
 const ViewAllBooks = () => {
   const [books, setBooks] = useState([]);
@@ -151,7 +152,8 @@ const ViewAllBooks = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {filteredBooks.slice(5, 15).length > 0 ? (
             filteredBooks.slice(5, 15).map((book) => (
-              <div
+              <Link
+                to={`/books/${book._id}`}
                 key={book.id}
                 className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
               >
@@ -165,7 +167,7 @@ const ViewAllBooks = () => {
                   <p className="text-sm text-gray-600">by {book.author}</p>
                   <p className="text-xs text-gray-500">ISBN: {book.isbn}</p>
                 </div>
-              </div>
+              </Link>
             ))
           ) : (
             <p className="text-center text-gray-500 col-span-full">

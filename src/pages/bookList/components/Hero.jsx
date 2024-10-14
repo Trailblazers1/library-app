@@ -12,10 +12,21 @@ const Hero = () => {
           <div className="py-[35vh]">
             <h1 className="text-[70px] text-start font-extrabold text-[#334412]">
               Get Your New Book With The Best Price</h1>
-            <form>
-              <input type="text" placeholder="search for a book by Tittle/Genre/Author" className="border p-2 mb-2 w-full" required/>
-                   <button type="submit" className="border-2 border-[#036CDB] w-[100px] p-1 font-bold">search</button>
-                  </form>
+            <form className="flex justify-center items-center gap-2 mt-4">
+  <input
+    type="text"
+    placeholder="Search for a book by Title/Genre/Author"
+    className="border border-gray-300 rounded-full p-3 w-full max-w-[400px] focus:outline-none focus:border-blue-400 shadow-md"
+    required
+  />
+  <button
+    type="submit"
+    className="bg-[#036CDB] text-white p-3 rounded-full w-[120px] font-bold hover:bg-[#024fa1] transition-all duration-300"
+  >
+    Search
+  </button>
+</form>
+
 
                 </div>
                 {/* { <img src={picc} alt="" /> } */}

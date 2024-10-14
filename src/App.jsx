@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  ScrollRestoration,
+} from "react-router-dom";
 import "./App.css";
 import BookList from "./pages/bookList";
 import AddBook from "./pages/addBook";
@@ -13,73 +17,74 @@ import Fiction from "./pages/fiction";
 import Journals from "./pages/journals.jsx";
 import NonFiction from "./pages/nonFiction/index.jsx";
 import ViewAllBooks from "./pages/viewAllBooks/index.jsx";
+import RootLayout from "./components/RootLayout.jsx";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <BookList />,
+      element: <RootLayout />,
+      children: [
+        { index: true, element: <BookList /> },
+
+        {
+          path: "/add-new",
+          element: <AddBook />,
+        },
+
+        {
+          path: "/books/:id",
+          element: <BookDetails />,
+        },
+
+        {
+          path: "/about",
+          element: <About />,
+        },
+
+        {
+          path: "/authForm",
+          element: <AuthForm />,
+        },
+
+        {
+          path: "/wishList",
+          element: <WishList />,
+        },
+
+        {
+          path: "/contactUs",
+          element: <ContactUs />,
+        },
+
+        {
+          path: "/editbook",
+          element: <EditBook />,
+        },
+
+        {
+          path: "/getbooks",
+          element: <List />,
+        },
+
+        {
+          path: "/fiction",
+          element: <Fiction />,
+        },
+
+        {
+          path: "/journals",
+          element: <Journals />,
+        },
+
+        {
+          path: "/nonFiction",
+          element: <NonFiction />,
+        },
+
+        { path: "/viewAllBooks", element: <ViewAllBooks /> },
+      ],
     },
-
-    {
-      path: "/add-new",
-      element: <AddBook />,
-    },
-
-    {
-      path: "/books/:id",
-      element: <BookDetails />,
-    },
-
-    {
-      path: "/about",
-      element: <About />,
-    },
-
-    {
-      path: "/authForm",
-      element: <AuthForm />,
-    },
-
-    {
-      path: "/wishList",
-      element: <WishList />,
-    },
-
-    {
-      path: "/contactUs",
-      element: <ContactUs />,
-    },
-
-    {
-      path: "/editbook",
-      element: <EditBook />,
-    },
-
-    {
-      path: "/getbooks",
-      element: <List />,
-    },
-
-    {
-      path: "/fiction",
-      element: <Fiction/>
-    },
-
-    {
-      path: "/journals",
-      element: <Journals/>
-    },
-
-    {
-      path: "/nonFiction",
-      element: <NonFiction/>
-    },
-
-    {path: "/viewAllBooks",
-      element: <ViewAllBooks/>
-
-    }
   ]);
   return <RouterProvider router={router} />;
 }
