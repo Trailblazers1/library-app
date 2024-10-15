@@ -123,7 +123,8 @@ const ViewAllBooks = () => {
           <div className="relative w-full overflow-hidden mb-12">
             <div className="slider flex gap-4">
               {filteredBooks.slice(0, 5).map((book, index) => (
-                <div
+                <Link
+                  to={`/books/${book._id}`}
                   key={index}
                   className="min-w-[200px] md:min-w-[250px] lg:min-w-[300px] p-2"
                 >
@@ -140,7 +141,7 @@ const ViewAllBooks = () => {
                       <p className="text-sm text-gray-600">{book.author}</p>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
