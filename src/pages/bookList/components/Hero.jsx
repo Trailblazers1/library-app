@@ -1,5 +1,4 @@
 import pic from "./head.png";
-import List from "../../getBooks";
 import axios from "axios";
 import { BASE_URL } from "../../../constants";
 import { useEffect, useState } from "react";
